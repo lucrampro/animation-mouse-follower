@@ -24,7 +24,7 @@
     }
   </style>
 </head>
-<body>
+<body onmouseup="onMouseUnClick()" onmousedown="onMouseClick()">
   <div class="mouse--follower">
 
   </div>
@@ -34,6 +34,12 @@
       gsap.to('.mouse--follower', 1.5, { top: event.pageY, ease: Power4.easeOut })
       gsap.to('.mouse--follower', 1.5, { left: event.pageX, ease: Power4.easeOut })
     })
+    function onMouseClick () {
+      gsap.to('.mouse--follower', 0.3, { scale: 2, opacity: 0})
+    }
+    function onMouseUnClick () {
+      gsap.to('.mouse--follower', 0.3, { scale: 1, opacity: 1})
+    }
   </script>
 </body>
 </html>
